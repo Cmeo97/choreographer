@@ -14,14 +14,14 @@ num_seed_frames: 4000
 num_eval_episodes: 10
 # snapshot
 snapshots: [100000, 500000, 1000000, 2000000]
-snapshot_dir: ../../../offline_models/${dataset}/${collection_method}/${domain}/${agent.name}/${seed}
+snapshot_dir: /home/mila/c/cristian.meo/scratch/choreograph/offline_models/${dataset}/${collection_method}/${domain}/${agent.name}/${seed}
 # replay buffer
 replay_buffer_size: 2000000
 # misc
 seed: 1
 device: cuda
 use_tb: true
-use_wandb: true
+use_wandb: false
 
 # experiment
 experiment: pt
@@ -36,7 +36,7 @@ load_wm_dir: /
 loaded_agent: choreo
 snapshot_ts: 200000
 
-dataset_dir: ~/urlb_datasets/${dataset}/${domain}/${collection_method}/buffer
+dataset_dir: /home/mila/c/cristian.meo/scratch/datasets/${dataset}/${domain}/${collection_method}/buffer
 dataset: exorl
 collection_method: proto
 
@@ -52,7 +52,7 @@ hydra:
     subdir: ${hydra.job.num}
   launcher:
     timeout_min: 4300
-    cpus_per_task: 10
+    cpus_per_task: 4
     gpus_per_node: 1
     tasks_per_node: 1
     mem_gb: 160

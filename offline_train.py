@@ -12,7 +12,7 @@ from pathlib import Path
 import hydra
 import numpy as np
 import torch
-import wandb
+#import wandb
 from dm_env import specs
 
 import envs
